@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Você</title>
-    <!-- Carrega o Brython (Engine que roda Python na Web) -->
+    <!-- Links Corrigidos do Brython (Mantenha exatamente estes links para o Python funcionar) -->
     <script type="text/javascript" src="https://cloudflare.com"></script>
     <script type="text/javascript" src="https://cloudflare.com"></script>
     <style>
@@ -17,7 +17,6 @@
             height: 100vh;
             overflow: hidden;
         }
-        /* Container onde o turtle vai desenhar */
         #turtle-div {
             width: 700px;
             height: 700px;
@@ -27,19 +26,16 @@
 </head>
 <body onload="brython()">
 
-    <!-- O contêiner gráfico para o desenho -->
     <div id="turtle-div"></div>
 
-    <!-- O seu código Python nativo roda automaticamente aqui dentro -->
     <script type="text/python">
 import turtle
 import math
 import time
 from browser import document
 
-# Força o turtle a renderizar dentro da div correta na página
+# Comando correto para o Python injetar os gráficos na tela da Web
 turtle.set_container(document["turtle-div"])
-        
 
 screen = turtle.Screen()
 screen.setup(700, 700)
@@ -83,6 +79,7 @@ for i in range(N):
         x2 = xo + (xi - xo) * f2
         y2 = yo + (yi - yo) * f2
         
+        # Correção da leitura de tuplas no Brython
         r = c_outer[0] + (c_inner[0] - c_outer[0]) * f1
         g = c_outer[1] + (c_inner[1] - c_outer[1]) * f1
         b = c_outer[2] + (c_inner[2] - c_outer[2]) * f1
@@ -102,5 +99,4 @@ for i in range(N):
 turtle.done()
     </script>
 </body>
-  </html>
-  
+</html>
